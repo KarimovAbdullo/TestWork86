@@ -1,0 +1,58 @@
+.loginForm {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #1d1d1d;
+    }
+  
+    input {
+      // default style
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-style: normal;
+     color: #000;
+  
+      &:focus {
+        outline: none;
+        border-color: #1d1d1d;
+        box-shadow: 0 0 0 2px rgba(29, 29, 29, 0.2);
+      }
+  
+      &:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px white inset !important;
+        -webkit-text-fill-color: #000 !important;
+      }
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1d1d1d;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+     
+    }
+  
+    p {
+      color: red;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+  
