@@ -6,6 +6,7 @@ import { useAuthStore } from "../../store/auth";
 import { useProductStore } from "../../store/products";
 import styles from "./products.module.scss";
 import { ClipLoader } from "react-spinners";
+import { API_ENDPOINTS } from "../../constants/api";
 
 export default function ProductsPage() {
   const user = useAuthStore((state) => state.user);
@@ -14,7 +15,7 @@ export default function ProductsPage() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://dummyjson.com/products?limit=12")
+      .get(API_ENDPOINTS.PRODUCTS)
       .then((res) => setProducts(res.data.products))
       .finally(() => setLoading(false));
   }, [setLoading, setProducts]);

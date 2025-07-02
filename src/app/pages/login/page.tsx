@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { useAuthStore } from "../../store/auth";
 import styles from "./login.module.scss";
 import { ClipLoader } from "react-spinners";
+import { API_ENDPOINTS } from "../../constants/api";
+import { ERROR_MESSAGES } from "../../constants/errors";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -28,7 +30,7 @@ export default function LoginPage() {
     }
 
     try {
-      const res = await axios.post("https://dummyjson.com/auth/login", {
+      const res = await axios.post(API_ENDPOINTS.LOGIN, {
         username,
         password,
       });
@@ -42,7 +44,7 @@ export default function LoginPage() {
 
       router.push("/pages/products");
     } catch (err) {
-      setError("Неверное имя пользователя или пароль!");
+      setError(ERROR_MESSAGES.LOGIN.INVALID_CREDENTIALS);
       console.log(err);
     } finally {
       setIsSubmitting(false);
